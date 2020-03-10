@@ -3,6 +3,7 @@ package com.smartling.marketo.sdk.rest;
 import com.smartling.marketo.sdk.domain.Asset.Status;
 import com.smartling.marketo.sdk.domain.email.Email;
 import com.smartling.marketo.sdk.domain.email.EmailContentItem;
+import com.smartling.marketo.sdk.domain.email.EmailDynamicContent;
 import com.smartling.marketo.sdk.domain.email.EmailFullContent;
 import com.smartling.marketo.sdk.domain.email.EmailTextContentItem;
 import com.smartling.marketo.sdk.domain.email.EmailVariable;
@@ -102,6 +103,17 @@ public class MarketoEmailRestClient implements MarketoEmailClient {
             return fullContent.get(0);
         } else {
             throw new MarketoApiException(String.format("No full content for Email[id = %d, status = %s] found", id, status));
+        }
+    }
+
+    @Override
+    public EmailDynamicContent getEmailDynamicContent(int id, String contentId, Status status) throws MarketoApiException
+    {
+        List<EmailDynamicContent> dynamicContents = httpCommandExecutor.execute(new GetEmailDynamicContent(id, contentId, status));
+        if (dynamicContents != null && !dynamicContents.isEmpty()) {
+            return dynamicContents.get(0);
+        } else {
+            throw new MarketoApiException(String.format("Email[id = %d] not found", id));
         }
     }
 }

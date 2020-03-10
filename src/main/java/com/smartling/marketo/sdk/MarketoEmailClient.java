@@ -4,6 +4,7 @@ import com.smartling.marketo.sdk.domain.Asset;
 import com.smartling.marketo.sdk.domain.Asset.Status;
 import com.smartling.marketo.sdk.domain.email.Email;
 import com.smartling.marketo.sdk.domain.email.EmailContentItem;
+import com.smartling.marketo.sdk.domain.email.EmailDynamicContent;
 import com.smartling.marketo.sdk.domain.email.EmailFullContent;
 import com.smartling.marketo.sdk.domain.email.EmailTextContentItem;
 import com.smartling.marketo.sdk.domain.email.EmailVariable;
@@ -37,4 +38,6 @@ public interface MarketoEmailClient {
     List<EmailVariable> getEmailVariables(int id) throws MarketoApiException;
 
     EmailFullContent getEmailFullContent(int id, Status status) throws MarketoApiException;
+
+    EmailDynamicContent getEmailDynamicContent(int id, String contentId, Status status) throws MarketoApiException;
 }
