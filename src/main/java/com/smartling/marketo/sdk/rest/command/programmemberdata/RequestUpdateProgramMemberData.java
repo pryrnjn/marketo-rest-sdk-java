@@ -21,12 +21,12 @@ public class RequestUpdateProgramMemberData extends BaseMarketoCommand<ProgramMe
 
     @Override
     public String getPath() {
-        return "/rest/v1/programs/"+programId+"/members.json";
+        return "/v1/programs/"+programId+"/members.json";
     }
 
     @Override
     public String getMethod() {
-        return "POST";
+        return "POST_BODY";
     }
 
     @Override
