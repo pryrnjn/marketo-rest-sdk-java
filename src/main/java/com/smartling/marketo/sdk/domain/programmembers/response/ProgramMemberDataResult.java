@@ -7,13 +7,14 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 
-@Getter@Setter@AllArgsConstructor
+@Getter
+@Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ProgramMemberDataResult {
 
     private float seq;
     private String status;
-    ArrayList< SkipReason > reasons ;
+    ArrayList<SkipReason> reasons;
     private Integer leadId;
 
 }

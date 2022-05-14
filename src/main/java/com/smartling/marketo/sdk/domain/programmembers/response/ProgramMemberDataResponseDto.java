@@ -6,11 +6,12 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 
-@Getter@Setter@AllArgsConstructor
+@Getter
+@Setter
 public class ProgramMemberDataResponseDto {
 
     private String requestId;
-    ArrayList< ProgramMemberDataResult > result ;
+    ArrayList<ProgramMemberDataResult> result;
     private boolean success;
 
 }
