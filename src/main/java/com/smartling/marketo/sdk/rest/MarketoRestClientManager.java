@@ -84,6 +84,11 @@ public class MarketoRestClientManager implements MarketoClientManager {
         return new MarketoProgramMemberDataClient(httpCommandExecutor);
     }
 
+    @Override
+    public MarketoLeadClient getMarketoLeadClient() {
+        return new MarketoLeadClient(httpCommandExecutor);
+    }
+
     public final static class Builder {
         private final String identityUrl;
         private final String restUrl;
