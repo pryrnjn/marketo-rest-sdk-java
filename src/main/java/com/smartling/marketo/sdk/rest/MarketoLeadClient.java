@@ -1,9 +1,9 @@
 package com.smartling.marketo.sdk.rest;
 
 import com.smartling.marketo.sdk.MarketoApiException;
+import com.smartling.marketo.sdk.domain.leadsdto.CreateAndUpdateLeadResult;
 import com.smartling.marketo.sdk.domain.leadsdto.CreateAndUpdateLeadsRequestDto;
-import com.smartling.marketo.sdk.domain.leadsdto.CreateAndUpdateLeadsResponseDto;
-import com.smartling.marketo.sdk.domain.leadsdto.LeadInfoDto;
+import com.smartling.marketo.sdk.domain.leadsdto.LeadDetails;
 import com.smartling.marketo.sdk.rest.command.lead.CreateAndUpdateLeads;
 import com.smartling.marketo.sdk.rest.command.lead.FilterLeadsData;
 
@@ -16,19 +16,13 @@ public class MarketoLeadClient {
     public MarketoLeadClient(HttpCommandExecutor httpCommandExecutor) {
         this.httpCommandExecutor = httpCommandExecutor;
     }
-    public CreateAndUpdateLeadsResponseDto requestCreateLeads(
+    public List<CreateAndUpdateLeadResult> requestCreateLeads(
             CreateAndUpdateLeadsRequestDto createLeadsRequestDto) throws MarketoApiException {
-        List<CreateAndUpdateLeadsResponseDto> createLeadsResponseDtoList=httpCommandExecutor.execute(new CreateAndUpdateLeads(createLeadsRequestDto));
-        if(createLeadsResponseDtoList.isEmpty())
-            return null;
-        return createLeadsResponseDtoList.get(0);
+        return httpCommandExecutor.execute(new CreateAndUpdateLeads(createLeadsRequestDto));
     }
 
-    public LeadInfoDto findLeadsByFilterType(String filterType,String filterValues) throws MarketoApiException {
-       List<LeadInfoDto> leadInfoDtos= httpCommandExecutor.execute(new FilterLeadsData(filterType,filterValues));
-       if(leadInfoDtos.isEmpty())
-           return null;
-       return leadInfoDtos.get(0);
+    public List<LeadDetails> findLeadsByFilterType(String filterType,String filterValues) throws MarketoApiException {
+       return httpCommandExecutor.execute(new FilterLeadsData(filterType,filterValues));
     }
 
 }

@@ -2,19 +2,19 @@ package com.smartling.marketo.sdk.rest.command.programmemberdata;
 
 import com.google.common.collect.ImmutableMap;
 import com.smartling.marketo.sdk.domain.programmembers.ProgramMemberDataFields;
-import com.smartling.marketo.sdk.domain.programmembers.response.ProgramMemberDataResponseDto;
+import com.smartling.marketo.sdk.domain.programmembers.response.ProgramMemberDataResult;
 import com.smartling.marketo.sdk.rest.command.BaseMarketoCommand;
 
 import java.util.List;
 import java.util.Map;
 
-public class RequestUpdateProgramMemberData extends BaseMarketoCommand<ProgramMemberDataResponseDto> {
+public class RequestUpdateProgramMemberData extends BaseMarketoCommand<ProgramMemberDataResult> {
 
     private final Integer programId;
     private final List<ProgramMemberDataFields> programMemberDataFieldsList;
 
     public RequestUpdateProgramMemberData(Integer programId, List<ProgramMemberDataFields> programMemberDataFieldsList) {
-        super(ProgramMemberDataResponseDto.class);
+        super(ProgramMemberDataResult.class);
         this.programId = programId;
         this.programMemberDataFieldsList = programMemberDataFieldsList;
     }

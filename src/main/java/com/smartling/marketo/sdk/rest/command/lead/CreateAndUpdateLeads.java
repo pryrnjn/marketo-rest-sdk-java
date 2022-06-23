@@ -1,22 +1,18 @@
 package com.smartling.marketo.sdk.rest.command.lead;
 
 import com.google.common.collect.ImmutableMap;
+import com.smartling.marketo.sdk.domain.leadsdto.CreateAndUpdateLeadResult;
 import com.smartling.marketo.sdk.domain.leadsdto.CreateAndUpdateLeadsRequestDto;
-import com.smartling.marketo.sdk.domain.leadsdto.CreateAndUpdateLeadsResponseDto;
 import com.smartling.marketo.sdk.rest.command.BaseMarketoCommand;
 import java.util.Map;
 
-public class CreateAndUpdateLeads extends BaseMarketoCommand<CreateAndUpdateLeadsResponseDto> {
+public class CreateAndUpdateLeads extends BaseMarketoCommand<CreateAndUpdateLeadResult> {
 
     private CreateAndUpdateLeadsRequestDto createLeadRequestDto;
 
     public CreateAndUpdateLeads(CreateAndUpdateLeadsRequestDto createLeadRequestDto){
-        super(CreateAndUpdateLeadsResponseDto.class);
+        super(CreateAndUpdateLeadResult.class);
         this.createLeadRequestDto=createLeadRequestDto;
-    }
-
-    protected CreateAndUpdateLeads(Class<CreateAndUpdateLeadsResponseDto> type) {
-        super(type);
     }
 
     @Override
