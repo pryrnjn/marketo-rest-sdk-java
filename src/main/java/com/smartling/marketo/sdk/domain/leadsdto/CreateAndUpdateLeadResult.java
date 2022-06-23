@@ -1,15 +1,12 @@
 package com.smartling.marketo.sdk.domain.leadsdto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter@Setter
-public class CreateLeadResult {
+@Data
+public class CreateAndUpdateLeadResult {
+
     private Integer id;
-    /***
-     * made status ignorable because it's no used anymore
-     */
-    @JsonIgnore
     private String status;
 }

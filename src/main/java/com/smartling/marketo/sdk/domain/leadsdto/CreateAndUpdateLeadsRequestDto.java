@@ -1,17 +1,18 @@
 package com.smartling.marketo.sdk.domain.leadsdto;
 
+import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
 
 @Getter
-@Setter
-public class CreateLeadsRequestDto {
+@Builder
+public class CreateAndUpdateLeadsRequestDto {
 
     private ActionType action;
     private String lookupField;
-    ArrayList<CreateLeadsBasicInfoRequestDto> input;
+    ArrayList<CreateAndUpdateLeadsModel> input;
 
     public enum ActionType {
         createOrUpdate, createOnly, updateOnly, createDuplicate;

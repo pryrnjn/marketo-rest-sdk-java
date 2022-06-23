@@ -1,12 +1,13 @@
 package com.smartling.marketo.sdk.domain.leadsdto;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import java.util.ArrayList;
 
-@Getter@Setter
-public class CreateLeadsResponseDto {
+@Data
+public class CreateAndUpdateLeadsResponseDto {
     private String requestId;
     private boolean success;
-    private ArrayList< CreateLeadResult > result;
+    private ArrayList<CreateAndUpdateLeadResult> result;
 }

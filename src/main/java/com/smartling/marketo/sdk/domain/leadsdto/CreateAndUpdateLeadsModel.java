@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class CreateLeadsBasicInfoRequestDto {
+public class CreateAndUpdateLeadsModel {
 
     private String company;
     private String site;
