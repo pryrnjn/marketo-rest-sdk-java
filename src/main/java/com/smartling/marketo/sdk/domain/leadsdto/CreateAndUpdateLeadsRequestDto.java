@@ -8,7 +8,12 @@ import java.util.ArrayList;
 @Getter
 @Setter
 public class CreateLeadsRequestDto {
-    private String action;
+
+    private ActionType action;
     private String lookupField;
-    ArrayList< CreateLeadsBasicInfoRequestDto > input ;
+    ArrayList<CreateLeadsBasicInfoRequestDto> input;
+
+    public enum ActionType {
+        createOrUpdate, createOnly, updateOnly, createDuplicate;
+    }
 }
