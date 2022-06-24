@@ -9,7 +9,7 @@ import java.util.ArrayList;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ProgramMemberDataResult {
 
-    private float seq;
+    private Integer seq;
     private String status;
     ArrayList<SkipReason> reasons;
     private Integer leadId;
