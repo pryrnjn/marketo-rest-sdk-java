@@ -1,5 +1,9 @@
 package com.smartling.marketo.sdk;
 
+import com.smartling.marketo.sdk.rest.MarketoLeadClient;
+import com.smartling.marketo.sdk.rest.MarketoProgramMemberDataClient;
+import com.smartling.marketo.sdk.rest.MarketoTriggerCampaignClient;
+
 public interface MarketoClientManager {
     MarketoFolderClient getMarketoFolderClient();
 
@@ -18,4 +22,10 @@ public interface MarketoClientManager {
     MarketoProgramClient getMarketoProgramClient();
 
     MarketoTokenClient getMarketoTokenClient();
+
+    MarketoTriggerCampaignClient getMarketoTriggerCampaignClient();
+
+    MarketoProgramMemberDataClient getMarketoProgramMemberDataClient();
+
+    MarketoLeadClient getMarketoLeadClient();
 }
