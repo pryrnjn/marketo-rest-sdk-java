@@ -6,11 +6,13 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 import com.google.common.collect.ImmutableMap;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.io.IOException;
 
 @Data
+@AllArgsConstructor
 @JsonSerialize(using = CustomObjectFieldValues.CustomObjectFieldsSerializer.class)
 public class CustomObjectFieldValues {
 

@@ -1,5 +1,6 @@
 package com.smartling.marketo.sdk;
 
+import com.smartling.marketo.sdk.rest.MarketoCustomObjectClient;
 import com.smartling.marketo.sdk.rest.MarketoLeadClient;
 import com.smartling.marketo.sdk.rest.MarketoProgramMemberDataClient;
 import com.smartling.marketo.sdk.rest.MarketoTriggerCampaignClient;
@@ -28,4 +29,6 @@ public interface MarketoClientManager {
     MarketoProgramMemberDataClient getMarketoProgramMemberDataClient();
 
     MarketoLeadClient getMarketoLeadClient();
+
+    MarketoCustomObjectClient getMarketoCustomObjectClient();
 }

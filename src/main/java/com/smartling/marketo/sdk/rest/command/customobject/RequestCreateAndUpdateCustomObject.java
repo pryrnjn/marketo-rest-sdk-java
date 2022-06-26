@@ -3,8 +3,6 @@ package com.smartling.marketo.sdk.rest.command.customobject;
 import com.google.common.collect.ImmutableMap;
 import com.smartling.marketo.sdk.domain.customobject.CustomObjectFieldValues;
 import com.smartling.marketo.sdk.domain.customobject.response.CustomObjectCreateAndUpdateResult;
-import com.smartling.marketo.sdk.domain.leadsdto.CreateAndUpdateLeadsRequestDto;
-import com.smartling.marketo.sdk.domain.programmembers.response.ProgramMemberDataResult;
 import com.smartling.marketo.sdk.rest.command.BaseMarketoCommand;
 
 import java.util.List;
@@ -14,18 +12,17 @@ public class RequestCreateAndUpdateCustomObject
         extends BaseMarketoCommand<CustomObjectCreateAndUpdateResult> {
 
     private final String customObjectName;
-    private final String dedupeFields;
+    private final String dedupeBy;
     private final ActionType action;
     private final List<CustomObjectFieldValues> customObjectFieldValuesList;
 
     public RequestCreateAndUpdateCustomObject(String customObjectName,
             ActionType actionType,
-            String dedupeFields,
             List<CustomObjectFieldValues> customObjectFieldValuesList) {
         super(CustomObjectCreateAndUpdateResult.class);
         this.customObjectName = customObjectName;
         this.action = actionType;
-        this.dedupeFields = dedupeFields;
+        this.dedupeBy = "dedupeFields";
         this.customObjectFieldValuesList = customObjectFieldValuesList;
     }
 
@@ -48,7 +45,7 @@ public class RequestCreateAndUpdateCustomObject
         ImmutableMap.Builder<String, Object> builder =
                 ImmutableMap.<String, Object>builder()
                         .put("action", this.action)
-                        .put("dedupeBy", this.dedupeFields)
+                        .put("dedupeBy", this.dedupeBy)
                         .put("input", this.customObjectFieldValuesList);
         return builder.build();
     }
