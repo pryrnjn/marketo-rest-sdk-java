@@ -18,12 +18,12 @@ public class FilterLeadsData extends BaseMarketoCommand<LeadDetails> {
 
     @Override
     public String getPath() {
-        return "/v1/leads.json?_method=GET";
+        return "/v1/leads.json";
     }
 
     @Override
     public String getMethod() {
-        return "POST_BODY";
+        return "GET";
     }
     @Override
     public Map<String, Object> getParameters() {
