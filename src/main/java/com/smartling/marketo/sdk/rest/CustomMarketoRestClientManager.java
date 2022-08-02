@@ -22,7 +22,7 @@ public class CustomMarketoRestClientManager  implements CustomMarketoClientManag
     }
 
     @Override
-    public MarketoProgramMemberDataClient getMarketoProgramClient() {
+    public MarketoProgramMemberDataClient getMarketoProgramMemberDataClient() {
         return new MarketoProgramMemberDataClient(httpCommandExecutor);
     }
 
