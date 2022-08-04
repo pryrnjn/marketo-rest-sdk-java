@@ -19,7 +19,7 @@ public class MarketoRestClientManager implements MarketoClientManager {
 
     private final HttpCommandExecutor httpCommandExecutor;
 
-    private MarketoRestClientManager(HttpCommandExecutor httpCommandExecutor) {
+    public MarketoRestClientManager(HttpCommandExecutor httpCommandExecutor) {
         this.httpCommandExecutor = httpCommandExecutor;
     }
 
