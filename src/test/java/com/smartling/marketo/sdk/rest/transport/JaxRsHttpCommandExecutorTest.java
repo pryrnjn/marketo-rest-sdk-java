@@ -23,8 +23,8 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import javax.ws.rs.ProcessingException;
-import javax.ws.rs.client.Client;
+import jakarta.ws.rs.ProcessingException;
+import jakarta.ws.rs.client.Client;
 import java.net.URLEncoder;
 
 import static java.time.LocalDateTime.now;
